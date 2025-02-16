@@ -3,9 +3,12 @@
   
     let isClient = false;
     let discs = [];
+    let audio;
   
     onMount(() => {
       isClient = true;
+      audio = new Audio('/triggerjump.wav');
+      
       const isMobile = window.innerWidth < 768;
       const numDiscs = isMobile ? 80 : 150;
   
@@ -21,6 +24,13 @@
         });
       }
     });
+  
+    function playSound() {
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    }
   </script>
   
   <style>
@@ -48,6 +58,7 @@
       text-shadow: 0 0 10px #ff0000, 0 0 20px #0000ff;
       animation: textGlow 1.5s infinite alternate;
       z-index: 10;
+      cursor: pointer;
     }
   
     @keyframes textGlow {
@@ -112,7 +123,7 @@
   <section class="home-container">
     <div class="scanline"></div>
   
-    <h1 class="neon-text">Welcome to Ricochet Revival</h1>
+    <h1 class="neon-text" on:mouseenter={playSound}>Welcome to Ricochet Revival</h1>
   
     <p class="neon-button">THIS IS A LANDING PAGE UNTIL A WEBSITE IS SORTED</p>
   
