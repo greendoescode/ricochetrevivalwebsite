@@ -25,6 +25,11 @@
       title: "Created the Mouse Accelerator Client Plugin",
       role: "PLUGIN CREATORS",
     },
+    {
+      name: "trk305",
+      title: "Ricochet Enhanced Creator",
+      role: "PLUGIN CREATORS",
+    },
   ];
 
   let groupedContributors = contributors.reduce((acc, contributor) => {
