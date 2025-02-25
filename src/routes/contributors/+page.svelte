@@ -30,6 +30,11 @@
       title: "Ricochet Enhanced Creator",
       role: "PLUGIN CREATORS",
     },
+    {
+      name:"The Ricochet Lovers",
+      title:"Keeping the game alive",
+      role:"Players",
+    },
   ];
 
   let groupedContributors = contributors.reduce((acc, contributor) => {
